@@ -210,7 +210,7 @@ websocket_path() -> [filename:join([root_src_dir(), "websocket"])].
 -spec compiler_adapters() -> [types:compiler_adapters()].
 
 compiler_adapters() ->
-    [boss_compiler_adapter_erlang, boss_compiler_adapter_elixir, boss_compiler_adapter_lfe].
--spec template_adapters() -> ['boss_template_adapter_eex' | 'boss_template_adapter_erlydtl' | 'boss_template_adapter_jade',...].
+    [boss_compiler_adapter_erlang].
+-spec template_adapters() -> ['boss_template_adapter_erlydtl' | 'boss_template_adapter_jade',...].
 
-template_adapters() -> [boss_template_adapter_erlydtl, boss_template_adapter_jade, boss_template_adapter_eex].
+template_adapters() -> [boss_template_adapter_erlydtl, boss_template_adapter_jade].

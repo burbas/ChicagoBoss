@@ -45,8 +45,7 @@ terminate(_Reason, #state{router_adapter=RouterAdapter}=State) ->
         end, State#state.applications),
     Services = [ boss_translator, RouterAdapter, boss_model_manager, boss_cache],
     [Service:stop() ||Service <- Services],
-    application:stop(simple_bridge),
-    application:stop(elixir).
+    application:stop(simple_bridge).
 
 
 terminate_smtp(Pid) when is_pid(Pid) ->
@@ -255,8 +254,7 @@ execute_action_inner(Controller, Action, Tokens, Location, AppInfo,
                      RequestContext, LocationTrail, Req, SessionID) ->
     % do not convert a list to an atom until we are sure the controller/action
     % pair exists. this prevents a memory leak due to atom creation.
-    Adapters                            = [boss_controller_adapter_pmod,
-                                           boss_controller_adapter_elixir],
+    Adapters                            = [boss_controller_adapter_pmod],
 
     Adapter                             = make_action_adapter(Controller, AppInfo, Adapters),
     SessionID1                          = make_action_session_id(Controller, AppInfo, Req,

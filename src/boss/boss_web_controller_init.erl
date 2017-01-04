@@ -126,8 +126,6 @@ init_mail_service() ->
 
 init_services() ->
     init_lager(),
-    application:start(elixir),
-
     Env = boss_env:setup_boss_env(),
     _ = lager:info("Starting Boss in ~p mode...", [Env]),
     boss_model_manager:start(),

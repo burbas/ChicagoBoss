@@ -49,7 +49,7 @@
 -spec web_controller(_,_,_) -> any().
 -spec compiler_adapter_for_extension(_) -> any().
 -spec template_adapter_for_extension(nonempty_maybe_improper_list()) -> any().
--spec adapter_for_extension(_,['boss_compiler_adapter_elixir' | 'boss_compiler_adapter_erlang' | 'boss_compiler_adapter_lfe' | 'boss_template_adapter_eex' | 'boss_template_adapter_erlydtl' | 'boss_template_adapter_jade',...]) -> any().
+-spec adapter_for_extension(_,['boss_compiler_adapter_erlang' | 'boss_template_adapter_erlydtl' | 'boss_template_adapter_jade',...]) -> any().
 -spec template_extensions() -> any().
 -spec view_file_list() -> [any()].
 -spec init_file_list(atom()) -> [string()].

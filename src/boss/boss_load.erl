@@ -109,7 +109,6 @@ load_test_modules(Application, OutDir) ->
     Result.
 
 load_all_modules_and_emit_app_file(AppName, OutDir) ->
-    application:start(elixir),
     {ok, TranslatorSupPid}                  = boss_translator:start([{application, AppName}]),
     {ok, ModulePropList}                    = load_all_modules(AppName, TranslatorSupPid, OutDir),
     AllModules                              = lists:foldr(fun({_, Mods}, Acc) -> Mods ++ Acc end, [], ModulePropList),
@@ -530,4 +529,3 @@ view_custom_tags_dir_module(Application) ->
 
 incoming_mail_controller_module(Application) ->
     list_to_atom(lists:concat([Application, "_incoming_mail_controller"])).
-
